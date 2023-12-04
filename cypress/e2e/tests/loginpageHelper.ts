@@ -3,12 +3,12 @@ import { username, password, submitButton } from '../selectors/loginPageSelector
 
 export class LoginPage {
 
-    typeUsername(usernamee: string) {
-        cy.get(username).type(usernamee);
+    typeUsername(inputUsername: string) {
+        cy.get(username).type(inputUsername);
     }
 
-    typePassword(passwordd: string) {
-        cy.get(password).type(passwordd);
+    typePassword(inputPassword: string) {
+        cy.get(password).type(inputPassword);
     }
 
     clickLoginButton(){
