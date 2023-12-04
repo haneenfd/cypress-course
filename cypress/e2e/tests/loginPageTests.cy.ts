@@ -1,4 +1,4 @@
-import { LoginPage } from "./loginpage";
+import { LoginPage } from "./loginpageHelper";
 const loginPage = new LoginPage();
 
 describe('“Login“ page test cases', () => {
