@@ -3,7 +3,7 @@ const loginPage = new LoginPage();
 
 describe('“Login“ page test cases', () => {
   beforeEach(() => {
-    cy.visit('https://ptuk-trainerize.onrender.com/login');
+    cy.visit('/login');
   });
 
   it('valid login', () => {
