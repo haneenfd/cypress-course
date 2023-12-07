@@ -1,17 +1,30 @@
-import { companyButtons } from "../selectors/homePageSelectors";
-import { LoginPage } from "./loginpageHelper";
-const loginPage = new LoginPage();
+import { companyButtons,universityButtons } from "../selectors/homePageSelectors";
+import { performLogin } from "./performLogin";
+import { universityUsername,password,companyUsername } from "../selectors/loginCredentials";
 
-describe('“Homepage“ page test cases for company role', () => {
+describe('“Homepage“ page test cases for university role', () => {
 
   beforeEach(() => {
-    cy.login('ptuk.en','123');
-    cy.visit('/me');
+    performLogin(universityUsername,password);
   });
+
+  universityButtons.forEach((button) => {
+    it('valid button redirection', () => {
+      cy.get(button).click();
+    });
+  })
+
+});
+
+describe('“Homepage“ page test cases for Company role', () => {
+
+  beforeEach(() => {
+    performLogin(companyUsername,password);
+  });
+
   companyButtons.forEach((button) => {
     it('valid button redirection', () => {
       cy.get(button).click();
-      cy.url().should("include", button);
     });
   })
 

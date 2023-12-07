@@ -24,17 +24,31 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('login', (username, password) => {
-    cy.request({
-      method: 'POST',
-      url: 'http://localhost:5000/api/v1/auth/login',
-      body: {
-        username: username,
-        password: password,
-      },
-    }).then((response) => {
-      console.log(response.body.accessToken);
-      const accessToken = response.body.accessToken;
-      cy.setCookie('access-token', accessToken);
-    });
+  cy.request({
+    method: 'POST',
+    url: 'http://localhost:5000/api/v1/auth/login',
+    body: {
+      username: username,
+      password: password,
+    },
+  }).then((response) => {
+    cy.log(response.body)
+    const accessToken = response.body.accessToken;
+    
+    // Use cy.setLocalStorage to store the access token in the local storage
+    cy.setLocalStorage('access-token', accessToken);
   });
-  
+});
+
+Cypress.Commands.add('setLocalStorage', (key, value) => {
+  cy.window().then((win) => {
+    win.localStorage.setItem(key, JSON.stringify(value));
+  });
+});
+
+Cypress.Commands.add('getLocalStorage', (key) => {
+  return cy.window().then((win) => {
+    const value = win.localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
+  });
+});
