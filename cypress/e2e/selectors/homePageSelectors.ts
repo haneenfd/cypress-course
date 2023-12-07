@@ -1,15 +1,28 @@
-export const trainingRequestButton = ':nth-child(1) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root';
-export const acceptedRequestButton = ':nth-child(2) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root';
-export const trainersButton=':nth-child(3) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root';
-export const currentTraineesButtonForCompany = 'nth-child(4) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root';
-export const completedTraineesButton = 'nth-child(5) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root';
-export const editTrainingButton = 'nth-child(6) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root';
-export const archiveButton = 'nth-child(7) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const companyButtons = [trainingRequestButton,acceptedRequestButton,trainersButton,currentTraineesButtonForCompany,completedTraineesButton,editTrainingButton];
-export const requestsButton =':nth-child(1) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const submittedTraineesButton = ':nth-child(2) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const companiesButton = ':nth-child(3) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const currentTraineesButtonForUniversity = ':nth-child(4) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const completedTraineesButtonForUniversity = ':nth-child(5) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const archiveButtonForUniversity = ':nth-child(6) > .MuiStack-root > .MuiAvatar-root > .MuiButtonBase-root'
-export const universityButtons=[requestsButton,submittedTraineesButton,companiesButton,currentTraineesButtonForUniversity,completedTraineesButtonForUniversity,archiveButtonForUniversity]
+const trainingRequestButton = '#training-requests';
+const acceptedRequestButton = '#accepted-requests';
+const trainersButton='#trainers';
+const currentTraineesButtonForCompany = '#company-current-trainees';
+const completedTraineesButton = '#company-completed-trainees';
+const editTrainingButton = '#edit-training';
+const archiveButton = '#company-all-trainings'
+export const companyButtons = [trainingRequestButton,acceptedRequestButton,trainersButton,currentTraineesButtonForCompany,completedTraineesButton,editTrainingButton,archiveButton];
+//for university
+const requestsButton ='#training-request'
+const submittedTraineesButton = '#submitted-trainees'
+const companiesButton = '#companies'
+const currentTraineesButtonForUniversity = '#current-trainees'
+const completedTraineesButtonForUniversity = '#completed-trainees'
+const archiveButtonForUniversity = '#all-trainings'
+export const universityButtons=[submittedTraineesButton,companiesButton,currentTraineesButtonForUniversity,completedTraineesButtonForUniversity,archiveButtonForUniversity]
+//for trainer
+const evaluationRequestsButton = '#evaluation-requests';
+const currentTraineesButtonForTrainer = '#trainer-current-trainees';
+const finished200Button = '#finished-200-hours';
+const completedTraineesButtonForTrainer = '#trainer-completed-trainees';
+const archiveButtonForTrainer = '#trainer-all-trainings'
+export const trainerButtons = [evaluationRequestsButton,currentTraineesButtonForTrainer,finished200Button,completedTraineesButtonForTrainer,archiveButtonForTrainer]
+//for student
+const archiveButtonForStudent = '#all-training-student';
+const progressButton = '#Progress';
+export const studentButtons = [archiveButtonForStudent,progressButton];
+
