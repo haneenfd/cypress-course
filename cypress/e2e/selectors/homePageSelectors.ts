@@ -13,7 +13,7 @@ const companiesButton = '#companies'
 const currentTraineesButtonForUniversity = '#current-trainees'
 const completedTraineesButtonForUniversity = '#completed-trainees'
 const archiveButtonForUniversity = '#all-trainings'
-export const universityButtons=[submittedTraineesButton,companiesButton,currentTraineesButtonForUniversity,completedTraineesButtonForUniversity,archiveButtonForUniversity]
+export const universityButtons=[requestsButton,submittedTraineesButton,companiesButton,currentTraineesButtonForUniversity,completedTraineesButtonForUniversity,archiveButtonForUniversity]
 //for trainer
 const evaluationRequestsButton = '#evaluation-requests';
 const currentTraineesButtonForTrainer = '#trainer-current-trainees';
